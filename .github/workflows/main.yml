@@ -1,0 +1,19 @@
+name: Auto Commit
+on:
+  schedule:
+    - cron: '45 15 * * 1-6'
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          git config --global user.name "mxmxmmgg"
+          git config --global user.email "mxmxmmgg25@gmail.com"
+          git commit --allow-empty -m "commit: $(date '+%Y-%m-%d')"
+          git push
