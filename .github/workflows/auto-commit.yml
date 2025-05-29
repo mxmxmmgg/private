@@ -10,5 +10,5 @@ jobs:
       - run: |
           git config --global user.name "mxmxmmgg"
           git config --global user.email "mxmxmmgg25@gmail.com"
-          git commit -m "Auto-commit: $(date '+%Y-%m-%d')" --allow-empty
+          git commit -m "commit: $(date '+%Y-%m-%d')" --allow-empty
           git push
