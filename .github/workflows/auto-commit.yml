@@ -1,12 +1,17 @@
 name: Auto Commit
 on:
   schedule:
-    - cron: '25 15 * * *'
+    - cron: '36 15 * * 1-6'
+  workflow_dispatch:
+
 jobs:
-  commit:
+  auto-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - run: |
           git config --global user.name "mxmxmmgg"
           git config --global user.email "mxmxmmgg25@gmail.com"
