@@ -24,7 +24,8 @@ jobs:
         run: |          
           git config --local user.email mxmxmmgg25@gmail.com"
           git config --local user.name "mxmxmmgg"
-          git commit --allow-empty -m "commit of $date"
+          git add -A
+          git commit -m "commit of $date"
       - name: Push
         uses: ad-m/github-push-action@master
         with:
